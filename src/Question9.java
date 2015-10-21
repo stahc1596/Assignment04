@@ -20,24 +20,33 @@ public class Question9 {
         // TODO code application logic here
 
         Scanner input = new Scanner(System.in);
-
+        
+        //Player 1 and player 2 start on square 1.
         int player1 = 1;
         int player2 = 1;
+        
+        //Turns are determined by this variable.
         int turn = 1;
 
+        //This statement repeats until player 1 or 2 reaches square 100.
         while (player1 != 100 && player2 != 100) {
             
+            //This statement determines whos turn it is.
             if (turn == 1){
                 System.out.println("It is now player ones turn.");
             }else if (turn == 2){
                 System.out.println("It is now player twos turn.");
             }
+            
+            //The player then rolls the dice and enters what the sum of the dice were.
             System.out.print("Enter sum of dice: ");
             int roll = input.nextInt();
             while (roll > 12 || roll < 2) {
                 System.out.println("That is not a roll, please try again.");
                 roll = input.nextInt();
             }
+            
+            //This statement determines who will be moving depending on which turn we're on.
             int position = 0;
             if (turn == 1) {
                 player1 = player1 + roll;
@@ -47,6 +56,8 @@ public class Question9 {
                 position = player2;
             }
             
+            //If the player lands on a snake or a ladder, they will move to a different spot
+            //that corresponds to the snake/ladder.
             if (position == 54) {
                 position = 19;
                 
@@ -77,6 +88,9 @@ public class Question9 {
                 position = position - goBack;
                 System.out.println("Whoops too much, go back " + goBack);
             }
+            
+            //Depending on whose turn it is, the code then finalizes the players turn
+            //and then switches the turn to the next player.
             if (turn == 1){
                 player1 = position;
                 System.out.println("You are now on " + player1);
@@ -89,6 +103,8 @@ public class Question9 {
                 turn = turn - 1;
             }
         }
+        
+        //If you won the game, you are then presented with a congratulations.
         System.out.println("Congratulations! You Win!");
 
     }

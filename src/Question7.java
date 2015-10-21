@@ -22,11 +22,18 @@ public class Question7 {
         
         Scanner input = new Scanner(System.in);
         
+        //The user enters the speed limit.
         System.out.print("Enter speed limit: ");
         int speedlimit = input.nextInt();
+        
+        //The user enters the speed at which they were travelling at.
         System.out.print("Enter your speed: ");
         int speed = input.nextInt();
+        
+        //An equation calculates how much the user went over the speed limit if they did.
         int speedTotal = speed - speedlimit;
+        
+        //The fine is calculated through these codes.
         if (speedTotal > 1 && speedTotal <= 20){
             System.out.println("You are speeding and your fine is $100");
         }else if (speedTotal > 21 && speedTotal <= 30){

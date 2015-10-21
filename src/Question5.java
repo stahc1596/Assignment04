@@ -20,11 +20,13 @@ public class Question5 {
         // TODO code application logic here
 
         Scanner input = new Scanner(System.in);
-
+        
+        //User enters his/her name.
         System.out.println("Please enter your name: ");
         String name = input.nextLine();
         System.out.println();
 
+        //the user then puts in what her test is out of and what mark they got 5 times.
         System.out.println("What was your test out of?");
         int test1Out = input.nextInt();
         System.out.println("What mark did you get?");
@@ -55,6 +57,7 @@ public class Question5 {
         int test5Mark = input.nextInt();
         System.out.println();
 
+        //The tests are then put into percentages and given to the user.
         System.out.println("Test scores for " + name);
         System.out.print("Test 1: ");
         double percent1 = test1Mark *100 / test1Out;
@@ -72,6 +75,7 @@ public class Question5 {
         double percent5 = test5Mark * 100 / test5Out;
         System.out.println(percent5);
         
+        //The average percentage of the users tests.
         double average = (percent1 + percent2 + percent3 + percent4 + percent5) / 5;
         System.out.println(average);
         
