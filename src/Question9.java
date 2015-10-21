@@ -41,6 +41,12 @@ public class Question9 {
             //The player then rolls the dice and enters what the sum of the dice were.
             System.out.print("Enter sum of dice: ");
             int roll = input.nextInt();
+            
+            //If the player forfeites, then the game ends.
+            if (roll == 0){
+                System.out.println("You Quit!!!");
+                break;
+            }
             while (roll > 12 || roll < 2) {
                 System.out.println("That is not a roll, please try again.");
                 roll = input.nextInt();
